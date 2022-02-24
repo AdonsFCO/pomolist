@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Pomdoro version</title>
+    
+    <style>
+        .container {
+            display: flex;
+            border: coral solid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 100px;
+            flex-direction: column;
+
+        }
+
+        #startTimer {
+            width: 400px;   
+            height: 100px;
+        }
+        .wapper
+        {
+            display: flex;
+           
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wapper">
+            <h2 id="minutes">00</h2>
+            <h2>:</h2>
+            <h2 id="seconds">00</h2>
+        </div>
+        
+        <button id="startTimer">Start</button>
+
+
+    </div>
+
+
+    <script src="TimerPomodoro.js"></script>
+</body>
+
+</html>
