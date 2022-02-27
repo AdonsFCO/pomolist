@@ -1,4 +1,6 @@
-class Pomodoro {
+//Remember that this version not longer used. Instad use the version that is on pomodoroAsObject
+
+class PomodoroDecrease {
 
     constructor(maximumTime, displayMin, displaySec, isAbreak) {
         this.maximumTime = maximumTime;

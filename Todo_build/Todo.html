@@ -1,0 +1,142 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr;
+            border: 2px solid red;
+            margin: 0;
+
+
+        }
+
+        header {
+            text-align: center;
+            background-color: blue;
+            margin: 0;
+            grid-column: span 3;
+
+        }
+
+        #todoContainer {
+            text-align: center;
+            /*grid-column: 2;*/
+            padding: 4px;
+            border: 4px solid red;
+
+        }
+
+
+        section .task {
+            display: grid;
+            border: rebeccapurple solid 2px;
+            grid-template-columns: 1fr 1fr auto;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        section .task .details {
+            text-align: left;
+        }
+
+        #menu {
+            display: grid;
+            padding: 5px;
+            border: 4px solid green;
+            grid-template-columns: 1fr auto;
+            grid-template-rows: auto 1fr;
+        }
+        #menu button
+        {
+            grid-row: 1;
+            grid-column: span 2;
+        }
+        #menu input
+        {
+            text-align: start;
+          
+        }
+        #doneContainer {
+            text-align: center;
+            grid-column: 3;
+            padding: 4px;
+            border: 4px solid brown;
+        }
+         .done
+        {
+            background-color: green;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+
+            <h1>todo list</h1>
+
+        </header>
+        <section id="menu">
+            <textarea type="text" id="title" placeholder="title"></textarea>
+            <textarea name="details" rows="5" id="details" placeholder="details"></textarea>
+            <button> Add Task</button>
+        </section>
+
+        <section id="todoContainer">
+            <div class="task">
+                
+                <label for="radio" class="todoDetails">
+                    Title
+                </label>
+                <div class="todoDetails">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores enim, dolor.
+                </div>
+
+
+                <input type="radio">
+            </div>
+
+
+
+        </section>
+
+        <section id="doneContainer">
+
+            <div class="task done">
+                <label for="radio" class="todoDetails">
+                    Title
+                </label>
+
+                <div class="todoDetails">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores enim, dolor.
+
+                </div>
+
+
+                <input type="radio">
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="todo.js"></script>
+</body>
+
+</html>
