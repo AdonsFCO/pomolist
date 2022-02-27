@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital@1&display=swap');
+/*font-family: 'Anton', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/                               
+
+
+/*******************************************Font and other suffs definitio********************/
+h1, h2 ,h3 ,h4{
+   font-family: 'Anton', sans-serif;
+}
+p{
+   font-family: 'Roboto', sans-serif
+}
+#burger
+{
+   display: flex;
+   flex-direction: column;
+   /*border: 2px solid black;*/
+   width: 20px;
+   height: 20px;
+   
+   justify-content: start;
+
+}
+#burger div{
+   border: 1px solid black;
+   background-color: black;
+   width: 10px;
+   height: 2px;
+   margin-top: 1px;
+   
+}
+#burger :last-child
+{
+ width: 5px;
+
+}
+
+
+
+
+
+/*************************************************************************************************/
+                                                /*Mobile*/
+
+@media only screen                   
+   and (min-width : 320px) {
+   /* Styles here */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+                                               /*Tablet*/
+@media only screen 
+   and (min-width : 768px) { 
+   /* Styles here */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                /*DESKTO+Laptop */
+@media only screen 
+   and (min-width : 1200px) {
+   /* Styles here */
+}
