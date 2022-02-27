@@ -5,12 +5,24 @@ font-family: 'Roboto', sans-serif;
 
 
 /*******************************************Font and other suffs definitio********************/
+html, body{
+
+   margin:0px;
+}
 h1, h2 ,h3 ,h4{
    font-family: 'Anton', sans-serif;
 }
 p{
    font-family: 'Roboto', sans-serif
 }
+
+
+header
+{
+   position: fixed;
+   width: 100%;
+}
+
 #burger
 {
    display: flex;
@@ -18,8 +30,8 @@ p{
    /*border: 2px solid black;*/
    width: 20px;
    height: 20px;
-   
    justify-content: start;
+   position: static;;
 
 }
 #burger div{
@@ -28,30 +40,87 @@ p{
    width: 10px;
    height: 2px;
    margin-top: 1px;
-   
 }
 #burger :last-child
 {
  width: 5px;
 
+
 }
 
+#rightUI, #leftUI{
+   height: 100vh;
+   
 
+   /*height: 100%;*/
+
+   
+}
+#rigthUI
+{
+ 
+}
+#leftUi
+{
+   position: fixed;
+
+ 
+}
+
+            /*****************************************SomeTest**********************************/
+          section 
+            {
+              
+               border: red 2px solid;
+
+            }
+            #leftUI{
+             
+              
+               background-color: aquamarine;
+               
+            }
+            #rightUI{
+               background-color: blue;
+            }
+               
+               
 
 
 
 /*************************************************************************************************/
                                                 /*Mobile*/
 
-@media only screen                   
-   and (min-width : 320px) {
-   /* Styles here */
+@media only screen{
+      .container
+      {
+         display: grid;
+         height: 100vh;
+         grid-template-rows:auto;
+         
+      }
+      header
+      {
+         padding: 0px;  
+         margin: 0px;
+      }
+      section #rightUI{
+        
+            height: 100%;
+      }
+      section #leftUI{
+         /*height: 100%;*/
+         display: none;
+         
+   }
+
+
+
+
+
+
+
 }
-
-
-
-
-
 
 
 
@@ -63,6 +132,17 @@ p{
 @media only screen 
    and (min-width : 768px) { 
    /* Styles here */
+
+
+section{
+
+   background-color: yellowgreen;
+}
+
+
+
+
+
 }
 
 
