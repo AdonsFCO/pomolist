@@ -4,8 +4,6 @@
             this.taskCounter = 0;
 
         }
-
-
         add(title, description)
 
         {   
@@ -32,7 +30,7 @@
         completeTask(id)
         {
             let now = new Date();
-            this.tasklist[id].completeDate = now;
+            this.tasklist[id].completeDate = now;   
             this.tasklist[id].completed = true;
         }   
         unCompleteTask(id)
