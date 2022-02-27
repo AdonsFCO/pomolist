@@ -1,16 +1,15 @@
 //For tomorow I will update some pomodoro settings, convert the pomodoro in to an object so 
 //I can make custom pomodoros by the user. 
-
-var visualSec = document.getElementById("seconds");
-var visualMin = document.getElementById("minutes");
+    
 var sec = 0;
 var min = 0;
-var pomodoro = setInterval(updateTimeOneSec, 10);
+var pomodoro = setInterval(updatePomodoro, 10);
 
 
-
+ 
 function resetTimer(element) {
     element.innerHTML = "00";
+    
 
 }
 
@@ -49,12 +48,12 @@ function updatePomodoro() {
         }
         else {
             clearInterval(pomodoro);
-            console.log("this happened")
+            console.log("this happened");
         }
 
 
 
     }
 
-
+}
 
