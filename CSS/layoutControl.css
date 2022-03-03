@@ -34,6 +34,7 @@ header
    justify-content: start;
    position: static;
    margin: 10px;
+   cursor:pointer;
   
 
 }
@@ -54,6 +55,16 @@ header
 {
  width: 11px;
 
+
+}
+
+#closeTap
+{
+display: none;
+font-size: 40px;
+position: fixed;
+left: 95%;
+cursor:pointer;
 
 }
 
@@ -95,36 +106,45 @@ header
       height: 100%;
       /* display: none; */
       right: 100%;
+    
      
    }  
 
    .navActive
    {
-      background-color: gold;
-      animation:navAnimation 2s forwards;
+      
+      animation:navAnimationFoward 2s forwards;
 
    }
    .navInactive
    {
-
+      animation:navAnimationBackwards 2s backwards;
 
    }
-   @keyframes navAnimation {
+   
+
+   @keyframes navAnimationFoward {
       100%
       {
-         
-         display: block;
+
          transform: translateX(100%);
-         
+     
      
       }
-
-
-
       
    }
 
+   @keyframes navAnimationBackwards {
+      0% 
+      {
+          transform: translateX(100%);
+
+      }
+   }
+   
 /******************************************/
+/*****************Close Button*************/
+
 
 }  
 
@@ -138,6 +158,7 @@ header
    and (min-width : 768px) { 
    /* Styles here */
 
+      
 
 
 
