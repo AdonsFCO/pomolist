@@ -1,6 +1,6 @@
 let menu = document.querySelector("#menu");
 let closeButton = document.getElementById("closeTap");
-
+let pomodoroMenu = document.getElementById("#pomodroos");
 
 
 //This class shows the menu if the class inactive is related 
@@ -17,7 +17,6 @@ function showMenu(){
     
 }
 
-
 function hideMenu(){
     menu.classList.remove("navActive");
 
@@ -29,5 +28,10 @@ function hideMenu(){
   
 
     );
+
+}
+function showPomodoroMenu(){
+
+    
 
 }

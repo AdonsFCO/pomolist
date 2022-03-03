@@ -95,6 +95,7 @@ cursor:pointer;
        grid-template-columns: auto 1fr auto;
        grid-template-rows: 1fr auto;
       position: relative;
+      overflow: hidden;
    }  
 /******************************************/
 /***********Nav****************************/
@@ -143,8 +144,50 @@ cursor:pointer;
    }
    
 /******************************************/
-/*****************Close Button*************/
+/****************pomodoros******************/
 
+#pomodoros
+{
+position: absolute;
+width: 100%;
+margin:0;
+padding: 0;
+height: 100%;
+left: 100%;
+
+}
+
+.pomoActive
+{
+   
+   animation:pomoAnimationFoward 2s forwards;
+
+}
+.pomoInactive
+{
+   animation:pomoAnimationBackwards 2s backwards;
+
+}
+
+
+@keyframes pomoAnimationFoward {
+   100%
+   {
+
+      transform: translateX(-100%);
+  
+  
+   }
+   
+}
+
+@keyframes pomoAnimationBackwards {
+   0% 
+   {
+       transform: translateX(100%);
+
+   }
+}
 
 }  
 
