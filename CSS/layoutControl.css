@@ -21,6 +21,7 @@ header
 {
    position: absolute   ;
    /*width: 100%;*/
+   z-index: 10;
 }
 
 #burger
@@ -33,6 +34,7 @@ header
    justify-content: start;
    position: static;
    margin: 10px;
+  
 
 }
 #burger div{
@@ -55,43 +57,16 @@ header
 
 }
 
-#rightUI, #leftUI{
-   height: 100vh;
-   
 
-   /*height: 100%;*/
 
-   
-}
-#rigthUI
-{
- 
-}
-#leftUi
-{
-   position: fixed;
-
- 
-}
 
             /*****************************************SomeTest**********************************/
-          section 
-            {
-              
-               border: red 2px solid;
+               nav{
+                  background-color: grey;
 
-            }
-            #leftUI{
-             
-              
-               background-color: aquamarine;
-               
-            }
-            #rightUI{
-               background-color: blue;
-            }
-               
-               
+               }
+               main {background-color: blue;}
+               section{background-color: brown;}
 
 
 
@@ -99,37 +74,59 @@ header
                                                 /*Mobile*/
 
 @media only screen{
-      .container
+
+/***********Main container*****************/
+
+    .container 
+    { 
+       height: 100vh;
+       display: grid;
+       grid-template-columns: auto 1fr auto;
+       grid-template-rows: 1fr auto;
+      position: relative;
+   }  
+/******************************************/
+/***********Nav****************************/
+   nav{
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      /* display: none; */
+      right: 100%;
+     
+   }  
+
+   .navActive
+   {
+      background-color: gold;
+      animation:navAnimation 2s forwards;
+
+   }
+   .navInactive
+   {
+
+
+   }
+   @keyframes navAnimation {
+      100%
       {
-         display: grid;
-         height: 100vh;
-         width: auto;
-         grid-template-rows:auto;
          
-      }
-      header
-      {
-         padding: 0px;  
-         margin: 0px;
-      }
-      section #rightUI{
-        
-            height: 100%;
-      }
-      section #leftUI{
-         /*height: 100%;*/
-         display: none;
+         display: block;
+         transform: translateX(100%);
          
+     
+      }
+
+
+
+      
    }
 
+/******************************************/
 
-
-
-
-
-
-}
-
+}  
 
 
 
@@ -141,11 +138,6 @@ header
    and (min-width : 768px) { 
    /* Styles here */
 
-
-section{
-
-   background-color: yellowgreen;
-}
 
 
 
