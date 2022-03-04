@@ -111,13 +111,13 @@ cursor:pointer;
      
    }  
 
-   .navActive
+   .menuActive
    {
       
       animation:navAnimationFoward 2s forwards;
 
    }
-   .navInactive
+   .menuInactive
    {
       animation:navAnimationBackwards 2s backwards;
 
@@ -146,7 +146,7 @@ cursor:pointer;
 /******************************************/
 /****************pomodoros******************/
 
-#pomodoros
+#pomo
 {
 position: absolute;
 width: 100%;

@@ -1,37 +1,86 @@
 let menu = document.querySelector("#menu");
 let closeButton = document.getElementById("closeTap");
-let pomodoroMenu = document.getElementById("#pomodroos");
+let pomodoros = document.getElementById("pomo");
 
 
-//This class shows the menu if the class inactive is related 
 
-function showMenu(){
-    console.log("The menu has been showed")
-    if(menu.classList.contains("navInactive")){
-        menu.classList.remove("navInactive");
+
+/*This function close the current tab that is oppened*/
+function closeCurrentTab(tab) {
+
+    tab.classList.remove(`${tab.id}Active`);
+    tab.classList.add(`${tab.id}Inactive`)
+    closeButton.removeEventListener("click",(e) =>{});
+    showCloseButton(false);
+}
+
+
+/*This function shows exit button and adds an event listener to that 
+button*/
+function showCloseButton(visible, tab) {
+    if (visible === true) {
+
+        setTimeout(() => {
+            closeButton.style.display = "block";
+        }, 2000);
+        closeButton.addEventListener("click", function (e) {
+            closeCurrentTab(tab); //<-- I will fix this later i promise
+
+        });
+    } else {
+        setTimeout(() => {
+            closeButton.style.display = "none";
+
+        }, 100 //<----- TimeOut don't delete me 
+
+
+        );
     }
-    menu.classList.add("navActive");
-    setTimeout(()=>{
-        closeButton.style.display= "block";
-    }, 2000);
-    
-}
-
-function hideMenu(){
-    menu.classList.remove("navActive");
-
-    menu.classList.add("navInactive");
-    setTimeout(()=>{
-        closeButton.style.display= "none";
-
-    }, 100
-  
-
-    );
 
 }
-function showPomodoroMenu(){
 
-    
+function showThisTab(thisMenu) {
+    console.log(thisMenu)
+    if (thisMenu.classList.contains(`${thisMenu.id}Inactive`)) {
+        thisMenu.classList.remove((`${thisMenu.id}Inactive`));
+    }
 
+    thisMenu.classList.add(`${thisMenu.id}Active`)
+
+    showCloseButton(true, thisMenu);
 }
+
+// function hideThisMenu(thisMenu) {
+//     thisMenu.classList.remove(`${thisMenu.id}Active`);
+//     menu.classList.add(`${thisMenu.id}Inactive`);
+//     showCloseButton(false);
+//}
+
+// function showMenu() {
+//     menu.classList.add("navActive");
+//     showCloseButton(true, menu);
+
+
+// }
+
+
+/*This function hide that menu*/
+
+// function hideMenu() {
+//     menu.classList.remove("navActive");
+
+//     menu.classList.add("navInactive");
+//     showCloseButton(false);
+// }
+
+
+
+// /*This function show the menu that come from the right */
+// function showPomodoroMenu() {
+//     if (pomodoroMenu.classList.contains("pomoInactive")) {
+//         pomodoroMenu.classList.remove("pomoInactive");
+//     }
+//     pomodoroMenu.classList.add("pomoActive");
+//     showCloseButton(true);
+
+// }
