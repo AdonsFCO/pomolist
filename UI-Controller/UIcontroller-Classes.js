@@ -15,7 +15,7 @@ class BurgerButton {
     /**
      * This button enables the burger button.
      * 
-     * @param {boolean} eneable - Determines if the button is going to be visible. 
+     *  
      */
     eneable() {
         this.target.visible = true;
@@ -41,7 +41,6 @@ class BurgerButton {
 
     }
 }
-
 class TabCloseButton {
     /** This is the close button controller 
      * 
@@ -87,8 +86,6 @@ class TabCloseButton {
     }
 
 }
-
-
 class Tab {
     /** This class can control the visual tabas on the screen. 
      * 
@@ -133,19 +130,53 @@ class Tab {
 
 
 }
+class StaticTab extends Tab
+{
 
-//Here I stard using those elements in a user interface.
-class userInterfaceController {
+
+
+}
+/**
+ * 
+ * @param {windows.document} menu - This represents the contolos of the menu tab. 
+ * @param {windows.document} pomodorosTab - This represents the controls of the pomodoro tab. 
+ * @param {windows.document} mainTab - This represents the controls of the main tab. 
+ * @param {windows.document} closeButton - This represents the controls of the close button. 
+ * @param {windows.document} burgerButton - This represents the controls of the burger button. 
+ *
+ * 
+ */
+
+class UserInterfaceController {
     constructor(menu, pomodorosTab, mainTab, closeButton, burgerButton) {
+        this.menu = menu;
+        this.pomodorosTab = pomodorosTab;
+        this.mainTab = mainTab;
+        this.closeButton = closeButton; 
+        this.burgerButton = burgerButton;
+        
+        //Inicialize the elements 
+        this.menu = new Tab(this.menu);
+        this.pomodorosTab = new Tab(this.pomodorosTab);
+        this.mainTab = new StaticTab(this.mainTab);
+        this.closeButton = new TabCloseButton(this.closeButton,this.pomodorosTab); 
+        this.burgerButton = new BurgerButton(this.burgerButton, this.pomodorosTab);
+
+
 
     }
-    test() {
-        console.log(this.visualElements.buttons["burger"].id);
+    #stablishFunctions ()
+    {
+        
 
     }
+
+
 }
 
-let interface = new userInterfaceController();
+
+
+
 
 
 //here I give thos elements to the new object so I can work with then.
