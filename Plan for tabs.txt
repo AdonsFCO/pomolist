@@ -1,0 +1,13 @@
+Click on Burger > open menu < menu target
+click on close >  close menu
+
+but if 
+
+Click on button > Open pomo < pomo target
+Click On close > Close pomo
+
+and now  if 
+
+click on burger > Open menu < menu target
+click on close > Close menu < pomo target
+click on close > clsoe pomo 

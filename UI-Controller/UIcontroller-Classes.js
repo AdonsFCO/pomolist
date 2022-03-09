@@ -3,13 +3,14 @@ class BurgerButton {
      * 
      * @param {windows.document} documentElement 
      * @param {Tab} target 
+     * 
      */
-
+    // 
     constructor(documentElement, target) {
         this.documentElement = documentElement;
         this.target = target;
         this.reference; //<--- This is a reference for a funcition just to deleted if its necesary. 
-        this.documentElement.addEventListener("click", this.reference = this.eneable.bind(this));
+        this.documentElement.addEventListener("click", this.reference = this.desactivate.bind(this));
         this._onScreen = true;
     }
     /**
@@ -17,25 +18,36 @@ class BurgerButton {
      * 
      *  
      */
-    eneable() {
+    desactivate() {
         this.target.visible = true;
-        this._onScreen = false;
-        this.visible = false; 
+        this._onScreen = true;
+        this.visible = false;
     }
-    
-    
-/**
- * @param {boolean} visibility
- */
+    activate() {
+      
+        this.target.visible = false; 
+        this._onScreen = false;
+      
+            this.visible = true;
+            
+       
+
+    }
+
+    /**
+     * @param {boolean} visibility
+     */
     set visible(visibility) {
-        if(visibility === false)
-        {
+        if (visibility === false) {
             this.documentElement.style.display = "none";
 
         }
-        else 
-        {
-            this.documentElement.style.display = "block";
+        else {
+            setTimeout(()=>{
+                this.documentElement.style.display = "block";
+                 console.log("setTimeout");
+            },1600)
+            
         }
 
 
@@ -130,8 +142,7 @@ class Tab {
 
 
 }
-class StaticTab extends Tab
-{
+class StaticTab extends Tab {
 
 
 
@@ -148,28 +159,74 @@ class StaticTab extends Tab
  */
 
 class UserInterfaceController {
-    constructor(menu, pomodorosTab, mainTab, closeButton, burgerButton) {
+    constructor(menu, pomodorosTab, mainTab, closeButton, burgerButton, pomoButton) {
         this.menu = menu;
         this.pomodorosTab = pomodorosTab;
         this.mainTab = mainTab;
-        this.closeButton = closeButton; 
+        this.closeButton = closeButton;
         this.burgerButton = burgerButton;
-        
+
+        this.pomodoroButton = pomoButton; //<--- Please delete this later
+
+        //Reference Function for click events 
+        this.reference;
+
         //Inicialize the elements 
         this.menu = new Tab(this.menu);
         this.pomodorosTab = new Tab(this.pomodorosTab);
         this.mainTab = new StaticTab(this.mainTab);
-        this.closeButton = new TabCloseButton(this.closeButton,this.pomodorosTab); 
-        this.burgerButton = new BurgerButton(this.burgerButton, this.pomodorosTab);
+        this.closeButton = new TabCloseButton(this.closeButton, this.menu);
+        this.burgerButton = new BurgerButton(this.burgerButton, this.menu);
+
+
+        //Observe menu tab. 
+        this.observerMenu = new MutationObserver(() => {
+
+            if (this.menu._onScreen === true) {
+
+
+                this.closeButton.visible = true;
+            }
+            else {
+                console.log("shit happendds bro");
+                this.closeButton.visible = false;
+                this.burgerButton.activate();
+            }
+
+        });
+        this.observerMenu.observe(this.menu.documentElement, { attributes: true });
+
+
+
+
+        //observe Pomodoro tab 
+        this.pomodoroButton.addEventListener("click", () => {
+            this.pomodorosTab.visible = true;
+
+        })
+
+        this.observerPomodoro = new MutationObserver(() => {
+            if (this.pomodorosTab._onScreen === true) {
+                this.closeButton.target = this.pomodorosTab;
+                this.closeButton.visible = true;
+            }
+            else {
+                this.closeButton.visible = false;
+
+            }
+
+
+        });
+        this.observerPomodoro.observe(this.pomodorosTab.documentElement, { attributes: true });
+
+
 
 
 
     }
-    #stablishFunctions ()
-    {
-        
 
-    }
+
+
 
 
 }
