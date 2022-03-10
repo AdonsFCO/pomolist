@@ -63,6 +63,7 @@ class TabCloseButton {
         this.documentElement = documentElement;
         this.target = target;
         this._onScreen = false;
+        
         this.eventReference; // This is a reference to remove event onclick.
     }
 
@@ -91,6 +92,7 @@ class TabCloseButton {
             setTimeout(() => {
                 this.documentElement.removeEventListener("click", this.eventReference);
                 this.documentElement.style.display = "none";
+                
             }, 100);
 
         }
@@ -106,6 +108,7 @@ class Tab {
     constructor(documentElement) {
         this.documentElement = documentElement;
         this._onScreen = false; //<--- Do not change this value. Just used as a reference
+        this.hasBeenClosed;
     }
 
     /**
@@ -125,6 +128,7 @@ class Tab {
             this.documentElement.classList.remove(`${this.documentElement.id}Inactive`);
             this._onScreen = true;
             console.log(`${visiblity} <--- visiblity ${this._onScreen} <--- onscreen`)
+            this.hasBeenClosed = false;
         }
         else {
             if ((this.documentElement.classList.contains(`${this.documentElement.id}Active`) && visiblity === false) || (visiblity === false && this._onScreen === true)) {
@@ -132,7 +136,7 @@ class Tab {
                 this.documentElement.classList.add(`${this.documentElement.id}Inactive`);
                 console.log("this shit should happened")
                 this._onScreen = false;
-
+                this.hasBeenClosed = true;
                 console.log(`${visiblity} <--- visiblity ${this._onScreen} <--- onscreen`)
             }
 
@@ -182,16 +186,31 @@ class UserInterfaceController {
         //Observe menu tab. 
         this.observerMenu = new MutationObserver(() => {
 
-            if (this.menu._onScreen === true) {
+            if(this.menu.hasBeenClosed === true)
+            {
+                if(this.menu._onScreen === false && this.menu.documentElement.classList.contains("menuInactive") && this.pomodorosTab._onScreen === true)
+                {
+                   
+                    setTimeout(()=>{this.closeButton.target = this.pomodorosTab;},3000);                    
+                    this.closeButton.visible = true; 
+                    
 
+                }
 
-                this.closeButton.visible = true;
             }
-            else {
-                console.log("shit happendds bro");
+
+
+            if (this.menu._onScreen === true) {
+                this.closeButton.target = this.menu; 
+                this.closeButton.visible = true;
+                return 
+            }
+         
+               
                 this.closeButton.visible = false;
                 this.burgerButton.activate();
-            }
+
+           
 
         });
         this.observerMenu.observe(this.menu.documentElement, { attributes: true });
@@ -206,14 +225,17 @@ class UserInterfaceController {
         })
 
         this.observerPomodoro = new MutationObserver(() => {
+          
+
             if (this.pomodorosTab._onScreen === true) {
                 this.closeButton.target = this.pomodorosTab;
                 this.closeButton.visible = true;
+                return 
             }
-            else {
+          
                 this.closeButton.visible = false;
 
-            }
+            
 
 
         });
