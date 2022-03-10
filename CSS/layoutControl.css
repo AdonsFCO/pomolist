@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital@1&display=swap');
-/*font-family: 'Anton', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script&family=Roboto:ital@1&display=swap');/*font-family: 'Anton', sans-serif;
 font-family: 'Roboto', sans-serif;
 */                               
 
@@ -15,17 +14,29 @@ h1, h2 ,h3 ,h4{
 p{
    font-family: 'Roboto', sans-serif
 }
-
-
+main{
+   grid-area: main;
+}
+#logo
+{
+   font-family: 'Dancing Script', cursive;
+   
+}
 header
 {
-   position: absolute   ;
+  
    /*width: 100%;*/
    z-index: 10;
+}
+nav
+{
+   z-index: 11;
 }
 
 #burger
 {
+   grid-column: 1;
+   position: sticky;
    display: flex;
    flex-direction: column;
    /*border: 2px solid black;*/
@@ -67,8 +78,16 @@ left: 95%;
 cursor:pointer;
 
 }
-
-
+#logo 
+{
+   text-align: center;
+}
+.wrapper
+{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
 
 
             /*****************************************SomeTest**********************************/
@@ -76,8 +95,9 @@ cursor:pointer;
                   background-color: grey;
 
                }
-               main {background-color: blue;}
+               main {background-color: purple;}
                section{background-color: brown;}
+               header{background-color: RED; color: white;}
 
 
 
@@ -92,14 +112,36 @@ cursor:pointer;
     { 
        height: 100vh;
        display: grid;
-       grid-template-columns: auto 1fr auto;
-       grid-template-rows: 1fr auto;
-      position: relative;
-      overflow: hidden;
+       
+       grid-template-columns:1fr;
+       grid-template-rows:1fr 5fr;
+       
+      
+  
+      
+       position: relative;
+       overflow: hidden;
    }  
+
+   #tomato
+   {
+      width: 50px;
+      height: auto;
+      margin-left: 6px;
+      margin-right: 6px;;
+   
+   }
+   header{
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      padding: 0px;
+      align-items: center;
+      justify-content: center;
+   }
 /******************************************/
 /***********Nav****************************/
    nav{
+      
       position: absolute;
       margin: 0;
       padding: 0;
@@ -188,11 +230,19 @@ left: 100%;
 
    }
 }
+/******************************************/
+/****************Main******************/
+
+
+main{
+   grid-row: span 2;
+   grid-column: span 2;
+}
+
+
+
 
 }  
-
-
-
 
 
 

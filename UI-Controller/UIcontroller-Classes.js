@@ -226,7 +226,7 @@ class UserInterfaceController {
 
         this.observerPomodoro = new MutationObserver(() => {
           
-
+            
             if (this.pomodorosTab._onScreen === true) {
                 this.closeButton.target = this.pomodorosTab;
                 this.closeButton.visible = true;
