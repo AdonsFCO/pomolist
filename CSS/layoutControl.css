@@ -88,7 +88,38 @@ cursor:pointer;
    align-items: center;
    justify-content: center;
 }
+.task
+{
+   margin: 4px;
+   padding: 20px;
+   background-color: white;
+   border-left: black 7px solid;
+}
+.task p, .task h4
+{
+   display: inline;
+}
+.separator
+{
+   margin-bottom: 100px;
+}
+.task.complete /*When thte task is complete you should use this class */
+{
+   background-color: lightgreen;
+}
+.timer .menuInactive 
+{
+      display: block;
+}
+.time{
+display: inline;
 
+}
+textarea
+{
+   width: 100%;
+   height: 30%;
+}
 
             /*****************************************SomeTest**********************************/
                nav{
@@ -251,7 +282,6 @@ main{
    and (min-width : 768px) { 
    /* Styles here */
 
-      
 
 
 
@@ -276,5 +306,9 @@ main{
                                                 /*DESKTO+Laptop */
 @media only screen 
    and (min-width : 1200px) {
-   /* Styles here */
+      .container
+      {
+         
+      }
+      
 }

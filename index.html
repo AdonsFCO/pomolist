@@ -50,22 +50,22 @@
     <div class="container">
         <header>
             <div class="divider">
-                
+
             </div>
             <div id="burger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
-          
+
             <div class="wrapper">
-              
+
                 <h1 id="logo">
                     PomoTab
                 </h1>
                 <img id="tomato" src="CSS\icons\tomato-svgrepo-com.svg"></svg>
             </div>
-          
+
 
             <div id="closeTap">&times;
             </div>
@@ -87,17 +87,76 @@
 
 
             <button id="ThisButton">TestButton</button>
+            <button id="addTask"> Add Task</button>
+
+            <div id="todo">
+                <div class="task" draggable="true">
+                    <input type="radio">
+                    <h4> This is an example class</h4>
+                    <p>
+                        this should be hidden and is the description
+                    </p>
+
+                </div>
+
+
+                <div class="task" draggable="true">
+                    <input type="radio">
+                    <h4>
+                        This is another example class
+                    </h4>
+                    <p>
+                        this should be hidden and is the description
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
 
         </main>
 
         <section id="pomo">
+            <div class="Separator"> </div>
             <p>Here is something</p>
+
+
+
+            <div id="independentTaskView" class="visible">
+                <div class="timer">
+                    <div id="timer" class="timeWapper">
+                        <h2 id="minutesTimer" class="time">00</h2>
+                        <h2 id="dotsTimer" class="time" class="time">:</h2>
+                        <h2 id="secondsTimer" class="time">00</h2>
+                    </div>
+
+
+                  
+                    <button id="startTimer">Start</button>
+
+
+                </div>
+
+                <textarea>
+
+
+                </textarea>
+
+                <div class="timeExpend">
+                    <h3> Time Spend</h3>
+                    <h2 id="minutesSpend" class="time">00</h2>
+                    <h2 id="dotsSpend" class="time">:</h2>
+                    <h2 id="secondsSpend" class="time">00</h2>
+
+                </div>
+
+            </div>
         </section>
 
     </div>
 
-
-    i
 
     <script src="UI-Controller/UIcontroller-Classes.js"></script>
     <script src="UI-Controller/UI-Conntroller.js"></script>
