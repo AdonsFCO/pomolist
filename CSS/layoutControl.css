@@ -114,6 +114,15 @@ cursor:pointer;
 .time{
 display: inline;
 
+
+}
+.time #minutes, .time #minutesTimer, .time #secondsTimer, .time #dotsTimer{
+  font-size: 500px;
+
+}
+#timeExpend h3{
+   display: inline;
+   
 }
 textarea
 {

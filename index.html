@@ -38,7 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PomoList</title>
 
-
+    <link rel="icon" type="image/x-icon" href="CSS\icons\tomato-svgrepo-com.svg">
     <link rel="stylesheet" href="CSS/layoutControl.css">
 
 
@@ -124,7 +124,8 @@
 
 
 
-            <div id="independentTaskView" class="visible">
+            <form id="independentTaskView" class="visible">
+              
                 <div class="timer">
                     <div id="timer" class="timeWapper">
                         <h2 id="minutesTimer" class="time">00</h2>
@@ -137,15 +138,19 @@
                     <button id="startTimer">Start</button>
 
 
+                </form>
+                <div>
+                    <label for="textArea"> Description</label>
+                    <textarea name="textArea" id="textArea">
+                    </textarea>
                 </div>
+               
 
-                <textarea>
 
+          
 
-                </textarea>
-
-                <div class="timeExpend">
-                    <h3> Time Spend</h3>
+                <div id="timeExpend">
+                    <h3>Time Spend</h3>
                     <h2 id="minutesSpend" class="time">00</h2>
                     <h2 id="dotsSpend" class="time">:</h2>
                     <h2 id="secondsSpend" class="time">00</h2>
@@ -157,7 +162,7 @@
 
     </div>
 
-
+    <script src="UI-Controller\TaskController-classes.js"></script>
     <script src="UI-Controller/UIcontroller-Classes.js"></script>
     <script src="UI-Controller/UI-Conntroller.js"></script>
 </body>
