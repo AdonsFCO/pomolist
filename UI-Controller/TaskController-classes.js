@@ -20,5 +20,5 @@ class TaskList
 }
 let taksList = new TaskList();
 
-taksList.add("mamaguebo","coño");
+taksList.add("Prueba","test");
 console.log(taksList);
